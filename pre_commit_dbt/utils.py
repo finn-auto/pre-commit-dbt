@@ -453,6 +453,7 @@ def add_related_ymls(
     paths_with_missing: List[str],
     include_ephemeral: bool = False,
 ) -> NoReturn:
+    print(sql_path)
     for key, node in nodes.items():  # pragma: no cover
         if (
             not include_ephemeral
