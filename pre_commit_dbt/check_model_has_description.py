@@ -21,11 +21,8 @@ def has_description(paths: Sequence[str], manifest: Dict[str, Any]) -> int:
 
     status_code = 0
     ymls = get_filenames(paths, [".yml", ".yaml"])
-    print("ymls", ymls)
     sqls = get_model_sqls(paths, manifest)
-    print("sqls", sqls)
     filenames = set(sqls.keys())
-    print(filenames)
 
     # get manifest nodes that pre-commit found as changed
     models = get_models(manifest, filenames)
