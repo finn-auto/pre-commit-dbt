@@ -37,13 +37,13 @@
   entry: check-model-has-all-columns
   language: python
   types_or: [sql, yaml]
-- id: check-model-has-description
-  name: Check the model has description
-  description: Ensures that the model has description in properties file.
-  entry: check-model-has-description
-  language: python
-  types_or: [yaml, sql]
-  require_serial: true # because we need to process yaml and sql
+# - id: check-model-has-description
+#   name: Check the model has description
+#   description: Ensures that the model has description in properties file.
+#   entry: check-model-has-description
+#   language: python
+#   types_or: [yml, sql]
+#   require_serial: true # because we need to process yaml and sql
 - id: check-model-has-meta-keys
   name: Check the model has keys in the meta part
   description: Ensures that the model has a list of valid meta keys.
