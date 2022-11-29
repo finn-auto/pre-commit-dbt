@@ -308,11 +308,8 @@ def get_filenames(
 ) -> Dict[str, Path]:
     result = {}
     for path in paths:
-        # print(path)
         file = Path(path)
-        # print(file)
         filename = file.stem
-        # print(filename)
         if extensions and file.suffix not in extensions:
             pass
         else:
