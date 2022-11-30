@@ -122,6 +122,12 @@
   entry: check-script-semicolon
   language: python
   types_or: [sql]
+- id: check-script-pivot
+  name: Check the script does not contain the PIVOT function
+  description: Ensure that the script does not call the PIVOT function
+  entry: check-script-pivot
+  language: python
+  types_or: [sql]
 - id: check-source-childs
   name: Check the source has a specific number (max/min) of childs.
   description: Ensures the source has a specific number (max/min) of childs.
