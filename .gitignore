@@ -140,3 +140,6 @@ manifest.json
 # Mutmut
 html
 .mutmut-cache
+
+#IDE
+.idea

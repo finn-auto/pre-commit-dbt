@@ -270,3 +270,15 @@
   entry: remove-script-semicolon
   language: python
   types_or: [sql]
+- id: check-model-has-primary-key-tag
+  name: Check model has primary key tag
+  description: Check model has primary key tag for at least one column.
+  entry: check-model-has-primary-key-tag
+  language: python
+  types_or: [yaml, sql]
+- id: check-model-has-primary-key-description
+  name: Check model has primary key description
+  description: Check model has description for all primary key columns.
+  entry: check-model-has-primary-key-description
+  language: python
+  types_or: [yaml, sql]
