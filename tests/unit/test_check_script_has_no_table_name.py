@@ -10,6 +10,14 @@ from pre_commit_dbt.check_script_has_no_table_name import replace_comments
 TESTS = (  # type: ignore
     (
         """
+    SELECT EXTRACT(MONTH FROM CURRENT_DATE())
+    """,
+        [],
+        0,
+        {}
+    ),
+    (
+        """
     SELECT * FROM AA
     """,
         [],
