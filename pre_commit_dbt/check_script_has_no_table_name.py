@@ -18,6 +18,7 @@ REGEX_PARENTHESIS = r"([\(\)])"  # pragma: no mutate
 DATE_PARTS = ['day', 'month', 'year', 'week', 'dayofyear', 'dayofweek', 'isoweek', 'quarter', 'isoyear']
 
 
+
 def prev_cur_next_iter(
     sql: Sequence[str],
 ) -> Generator[Tuple[Optional[str], str, Optional[str]], None, None]:
