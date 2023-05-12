@@ -13,7 +13,7 @@ from pre_commit_dbt.utils import yellow
 
 REGEX_COMMENTS = r"(?<=(\/\*|\{#))((.|[\r\n])+?)(?=(\*+\/|#\}))|[ \t]*--.*"
 REGEX_SPLIT = r"[\s]+"
-IGNORE_WORDS = ["", "(", "{{"]  # pragma: no mutate
+IGNORE_WORDS = ["", "(", "{{", "ml.predict"]  # pragma: no mutate
 REGEX_PARENTHESIS = r"([\(\)])"  # pragma: no mutate
 DATE_PARTS = ['day', 'month', 'year', 'week', 'dayofyear', 'dayofweek', 'isoweek', 'quarter', 'isoyear']
 
