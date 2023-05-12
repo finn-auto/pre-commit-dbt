@@ -18,6 +18,14 @@ TESTS = (  # type: ignore
     ),
     (
         """
+    SELECT * FROM ML.PREDICT(args))
+    """,
+        [],
+        0,
+        {}
+    ),
+    (
+        """
     SELECT * FROM AA
     """,
         [],
