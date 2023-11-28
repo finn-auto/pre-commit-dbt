@@ -26,7 +26,8 @@ def validate_tags(
     models = get_models(manifest, filenames)
     for model in models:
         # tags can be specified only from manifest
-        if not model.node.get("target_schema", []):
+        raw_code = model.node.get("raw_code", [])
+        if raw_code.find('target_schema=generate_schema_name') < 0:
             status_code = 1
             print(
                 f"{model.node.get('original_file_path', model.filename)}: "
