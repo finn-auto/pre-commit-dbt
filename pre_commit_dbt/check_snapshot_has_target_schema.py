@@ -14,7 +14,7 @@ from pre_commit_dbt.utils import JsonOpenError
 
 
 def validate_tags(
-    paths: Sequence[str], manifest: Dict[str, Any], tags: Sequence[str]
+    paths: Sequence[str], manifest: Dict[str, Any]
 ) -> int:
     paths = get_missing_file_paths(paths, manifest)
 
@@ -40,13 +40,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     add_filenames_args(parser)
     add_manifest_args(parser)
 
-    parser.add_argument(
-        "--tags",
-        nargs="+",
-        required=True,
-        help="A list of tags that models can have.",
-    )
-
     args = parser.parse_args(argv)
 
     try:
@@ -55,7 +48,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         print(f"Unable to load manifest file ({e})")
         return 1
 
-    return validate_tags(paths=args.filenames, manifest=manifest, tags=args.tags)
+    return validate_tags(paths=args.filenames, manifest=manifest)
 
 
 if __name__ == "__main__":
