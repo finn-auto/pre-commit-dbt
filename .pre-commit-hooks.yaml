@@ -282,3 +282,9 @@
   entry: check-model-has-primary-key-description
   language: python
   types_or: [yaml, sql]
+- id: check-snapshot-has-target-schema
+  name: Check the snapshot has a target_schema attached
+  description: Ensures that the model has only valid tags from the provided list.
+  entry: check-snapshot-has-target-schema
+  language: python
+  types_or: [sql, yaml]
