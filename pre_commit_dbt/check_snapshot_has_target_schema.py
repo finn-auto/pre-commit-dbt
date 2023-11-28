@@ -9,7 +9,7 @@ from pre_commit_dbt.utils import add_manifest_args
 from pre_commit_dbt.utils import get_json
 from pre_commit_dbt.utils import get_missing_file_paths
 from pre_commit_dbt.utils import get_model_sqls
-from pre_commit_dbt.utils import get_models
+from pre_commit_dbt.utils import get_snapshots
 from pre_commit_dbt.utils import JsonOpenError
 
 
@@ -23,7 +23,8 @@ def validate_tags(
     filenames = set(sqls.keys())
 
     # get manifest nodes that pre-commit found as changed
-    models = get_models(manifest, filenames)
+    models = get_snapshots(manifest, filenames)
+
     for model in models:
         # tags can be specified only from manifest
         raw_code = model.node.get("raw_code", [])
