@@ -144,6 +144,18 @@ def get_models(
             yield Model(key, node.get("name"), filename, node)  # pragma: no mutate
 
 
+def get_snapshots(
+    manifest: Dict[str, Any],
+    filenames: Set[str]
+) -> Generator[Model, None, None]:
+    nodes = manifest.get("nodes", {})
+    for key, node in nodes.items():
+        split_key = key.split(".")
+        filename = split_key[-1]
+        if filename in filenames and split_key[0] == "snapshot":
+            yield Model(key, node.get("name"), filename, node)  # pragma: no mutate
+
+
 def get_ephemeral(
     manifest: Dict[str, Any],
 ) -> List[str]:
